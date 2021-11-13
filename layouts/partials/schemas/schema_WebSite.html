@@ -6,12 +6,14 @@
 		"@context": "http://schema.org",
 		"@type": "Webpage",
 		"specialty": "{{ .Site.Params.description }}",
+{{/* 
 		"mainContentOfPage": {
 			"@context": "http://schema.org/",
 			"@type": "WebPageElement",
-			"cssSelector": ".body-content"
+			"cssSelector": ".content"
 		},
-		"primaryImageOfPage": "{{ .Site.Params.imageurl | absURL }}"
+*/}}
+		{{/* "primaryImageOfPage": "{{ .Site.Params.imageurl | absURL }}" */}}
 	},
 	{
 		"@context": "http://schema.org",
@@ -55,11 +57,6 @@
 				"addressCountry": "{{ $location.address.country }}",
 				"postalCode": "{{ $location.address.postalcode }}"
 			},
-			"aggregateRating": {
-				"@type": "AggregateRating",
-				"ratingValue": "4.5",
-				"reviewCount": "50"
-			}
 		},
 		"potentialAction": {
 			"@type": "SearchAction",
@@ -98,7 +95,7 @@
 			},
 			{
 				"@context": "http://schema.org/",
-				"@type": "WPSidebar",
+						"@type": "WPSidebar",
 				"cssSelector": "#sidebar",
 				"citation": [
 				{{ range $i, $e := .Site.Menus.main }}{{ if $i }}, {{ end }}"{{ $e.URL | absURL }}"{{ end }}
@@ -111,7 +108,7 @@
 				"@id": "#footer",
 				"copyrightHolder":"{{ .Site.Title }}",
 				"publisher": "{{ .Site.Title }}",
-				"copyrightYear":"{{ now.Format "2006"}}"
+				"copyrightYear":"{{ now.Format "2021"}}"
 			}
 		]
 	}
