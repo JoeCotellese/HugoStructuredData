@@ -1,7 +1,7 @@
 {{ if isset .Params "location" }}{{ $location := index .Site.Data.location .Params.location }}
 <script type='application/ld+json'> 
 {
-    "@context": "http://www.schema.org",
+    "@context": "https://www.schema.org",
     "@type": "LocalBusiness",
     "name": "{{ .Site.Params.name }}",
     "mainEntityOfPage": {

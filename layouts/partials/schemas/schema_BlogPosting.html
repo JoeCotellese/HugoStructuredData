@@ -1,7 +1,7 @@
 {{ $location := index .Site.Data.location .Site.Params.primarylocation }}
 <script type="application/ld+json">
 	{
-		"@context":"http://schema.org",
+		"@context":"https://schema.org",
 		"@type": "BlogPosting", {{ with .Resources.Match "icon" }}{{ with index . 0 }}
 		"image": "{{ .Permalink }}", {{ end }}{{ end }}
 		"url": "{{ .Permalink }}",
